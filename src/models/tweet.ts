@@ -44,7 +44,7 @@ export class Tweet {
   public like(user: User): void {
     const newLike = new Like(user, this);
     likes.push(newLike);
-    this._likes.push(newLike); 
+    this._likes.push(newLike);
   }
 
   public show(tweet: Tweet, followers: User[]): void {
@@ -58,7 +58,10 @@ export class Tweet {
 
   private showTweet(tweet: Tweet): void {
     const counter = tweet.likes.length;
-    const whoLiked = tweet.likes.length > 0 ? tweet.likes[tweet.likes.length - 1].from.username : "";
+    const whoLiked =
+      tweet.likes.length > 0
+        ? tweet.likes[tweet.likes.length - 1].from.username
+        : "";
 
     console.log(
       this.formattedTweets(
@@ -78,7 +81,12 @@ export class Tweet {
     whoLiked: string,
     likeAccountTweet: number
   ): string {
-    let likesFormatted = likeAccountTweet > 0 ? `@${whoLiked} e outros ${likeAccountTweet - 1} usuários gostaram disso` : "";
+    let likesFormatted =
+      likeAccountTweet > 0
+        ? `@${whoLiked} e outros ${
+            likeAccountTweet - 1
+          } usuários gostaram disso`
+        : "";
 
     return `\n@${username}: ${content}\n${likesFormatted}`;
   }

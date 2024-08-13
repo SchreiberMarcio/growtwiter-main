@@ -5,6 +5,8 @@ import { User } from "./user";
 export class Like {
   private id: string = randomUUID();
 
+  //https://www.tutorialsteacher.com/typescript/typescript-readonly
+
   constructor(private readonly _from: User, private readonly _tweet: Tweet) {}
 
   public get from(): User {

@@ -5,9 +5,7 @@ import { tweets } from "../databases/tweet";
 import PasswordValidator from "password-validator";
 
 export class User {
-  createUsers(sue: User) {
-      throw new Error("Method not implemented.");
-  }
+  
   private _id: string = randomUUID();
   private _followers: User[] = [];
   private _tweets: Tweet[] = [];
